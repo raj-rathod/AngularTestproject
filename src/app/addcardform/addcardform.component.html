@@ -1,0 +1,96 @@
+
+<div class="container">
+    <div *ngIf="update">
+        <h2 id='form-heading'>Add New Flash Card</h2>
+        <form #signInForm = "ngForm" (ngSubmit) = "signInForm.valid && onSubmit(signInForm)">
+                <mat-form-field appearance="fill">
+                    <mat-label>Question</mat-label>
+                    <input matInput  #question = "ngModel" name="question"  [(ngModel)]="formData.question" required>
+                    <mat-error *ngIf="signInForm.submitted && !question.valid"><h5>This field is required.</h5></mat-error>
+                </mat-form-field>
+                <br>
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Answer</mat-label>
+                    <input matInput  #answer = "ngModel" name="answer"  [(ngModel)]="formData.answer" required>
+                    <mat-error *ngIf="signInForm.submitted && !answer.valid"><h5>This field is required.</h5></mat-error>
+                </mat-form-field>
+                <br>
+                <br>
+                <section>
+                    <div class="example-button-row">
+                      <button mat-raised-button color="primary" >Submit</button>
+                      <button mat-raised-button color="warn" (click)="clearData(signInForm)">Clear</button>
+                    
+                    </div>
+                </section>
+        </form>
+    </div>
+    <div *ngIf="!update">
+        <h2 id='form-heading'>Update flash Card</h2>
+        <form #updateform = "ngForm" (ngSubmit) = "updateform.valid && onUpdate(updateform)">
+                <mat-form-field appearance="fill">
+                    <mat-label>Question</mat-label>
+                    <input matInput  #question = "ngModel" name="question"  [(ngModel)]="formData.question" required>
+                    <mat-error *ngIf="updateform.submitted && !question.valid"><h5>This field is required.</h5></mat-error>
+                </mat-form-field>
+                <br>
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Answer</mat-label>
+                    <input matInput  #answer = "ngModel" name="answer"  [(ngModel)]="formData.answer" required>
+                    <mat-error *ngIf="updateform.submitted && !answer.valid"><h5>This field is required.</h5></mat-error>
+                </mat-form-field>
+                <br>
+                <br>
+                <section>
+                    <div class="example-button-row">
+                      <button mat-raised-button color="primary">Update</button>
+                      <button mat-raised-button color="warn" (click)="clearData(updateform)">Clear</button>
+                    
+                    </div>
+                </section>
+        </form>
+    </div>
+    <br>
+    <section>
+        
+            <mat-accordion class="example-button-row1" *ngFor="let data of dataArray;let i = index;">
+                <mat-expansion-panel (opened)="panelOpenState = true"
+                                     (closed)="panelOpenState = false">
+                  <mat-expansion-panel-header #correct >
+                    <mat-panel-description >
+                        <b>{{data.question}}</b>
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+                  <p>{{data.answer}}</p>
+                  <section>
+                    
+                    <div class="example-button-row">
+                      <div class="example-flex-container">
+                        <button mat-icon-button color="primary" #color (click)="rightCheck(correct,color)">
+                          <mat-icon>check</mat-icon>
+                        </button>
+                        <button mat-icon-button color="primary" #color (click)="wrongCheck(correct,color)">
+                            <mat-icon>close</mat-icon>
+                        </button>
+                        <button mat-icon-button color="primary" [attr.data]="data" #data (click)="updateData(data)" >
+                            <mat-icon>autorenew</mat-icon>
+                        </button>
+                        <button mat-icon-button  color="primary" [attr.data]="data" #data (click)="removeData(data)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                       
+                        
+                      </div>
+                </div>
+                  </section>
+                </mat-expansion-panel>
+              </mat-accordion>  
+    </section>
+      
+    
+      
+      
+
+</div>

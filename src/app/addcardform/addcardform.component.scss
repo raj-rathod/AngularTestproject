@@ -1,0 +1,54 @@
+#form-heading{
+    color: aliceblue;
+    font-size: 25pt;
+    margin-top: 20px;
+}
+.container{
+    align-content: center;
+    width: 100%;
+    margin-left: 40px;
+    margin-top: 10px;
+
+}
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  section {
+    display: table;
+  }
+  
+  
+  .example-button-row {
+    display: table-cell;
+    
+    width: 490px;
+  }
+
+  .example-button-row1 {
+    display: table-cell;
+    flex-direction: row;
+    width: 400px;
+    margin-right: 100px;
+   
+  }
+  .example-button-row1 mat-expansion-panel {
+    margin-right: 50px;
+   
+  }
+  
+  .example-button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+.example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+ 
+ 
+  
+ 
+  
