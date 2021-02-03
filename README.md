@@ -21,4 +21,22 @@ Main page user can add card in the list
 <div align="center">
     <img src="./src/assets/4.png" width="400px"</img> 
 </div>
+#before delete third card from the list
+<div align="center">
+    <img src="./src/assets/6.png" width="400px"</img> 
+</div>
+#After delete third card from the list
+<div align="center">
+    <img src="./src/assets/7.png" width="400px"</img> 
+</div>
+#On clicking edit, the form is populated and on submit card is updated
+(optional bonus task)
+<div align="center">
+    <img src="./src/assets/5.png" width="400px"</img> 
+</div>
+
+#form validation 
+<div align="center">
+    <img src="./src/assets/8.png" width="400px"</img> 
+</div>
 
