@@ -7,5 +7,5 @@ Main page user can add card in the list
 </div>
 #add one card in the list
 <div align="center">
-    <img src="./src/assets/1.jpg" width="400px"</img> 
+    <img src="./src/assets/1.png" width="400px"</img> 
 </div>
